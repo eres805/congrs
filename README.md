@@ -19,3 +19,9 @@ For additonal info contact
 Eric R:
 <eres805@gmail.com>
 
+
+####Additional Links
+
+<https://www.pivotaltracker.com/s/projects/1047060>
+
+<https://www.lucidchart.com/documents/edit/4bf5e38c-5334-3bf3-9c53-15090a005bed>
