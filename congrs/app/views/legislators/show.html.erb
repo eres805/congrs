@@ -1,0 +1,43 @@
+<% @results.each do |member| %>
+
+<h1>
+	<%= member["title"] %>. <%= member["first_name"] %> <%= member["last_name"] %>
+</h1>
+
+<h3>Political Info</h3>
+	
+<p>		
+	<b>Chamber</b>: <%= member["chamber"].capitalize %><br />
+	<b>Party</b>: <%= member["party"] %><br />
+	<b>State</b>: <%= member["state_name"] %><br />
+	<b>Term Started</b>: <%= member["term_start"] %><br />
+	<b>Term Ends</b>: <%= member["term_end"] %><br />
+</p>
+
+
+<h3>Contact Info</h3>
+	
+<p>		
+	<b>Phone</b>: <%= member["phone"] %><br />
+	<b>Fax</b>: <%= member["fax"] %><br />
+	<b>Contact Form</b>: <a href="<%= member["contact_form"] %>" target="_blank">Click Here</a><br />
+</p>
+
+
+<h3>Social Media</h3>
+	
+<p>		
+	<a href="http://facebook.com/<%= member["facebook_id"] %>" target="_blank">Facebook</a><br />
+	<a href="http://twitter.com/<%= member["twitter_id"] %>" target="_blank">Twitter</a><br />
+	<a href="http://youtube.com/<%= member["youtube_id"] %>" target="_blank">YouTube</a><br />
+</p>
+
+<% end %>
+
+
+
+
+
+
+	
+

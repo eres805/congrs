@@ -1,0 +1,12 @@
+<h1>Enter a state</h1>
+
+<form action="/states/show" method="get">
+
+	<%= select_tag :state, options_for_select(@us_states) %> 
+
+	<button>Submit</button>
+
+</form>
+ 
+
+
