@@ -1,5 +1,6 @@
 class LegislatorsController < ApplicationController
 
+before_action :authenticate
 
 def show
 

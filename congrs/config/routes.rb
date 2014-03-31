@@ -3,7 +3,13 @@ Congrs::Application.routes.draw do
 require 'httparty'
 require 'json'
 
-  root to: 'states#index'
+  get '/login', to: 'sessions#new'
+  post '/sessions', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+  root to: 'users#index'
+
+  resources :users
 
   get '/states' => 'states#index'
 
