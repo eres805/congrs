@@ -4,6 +4,8 @@
 	<%= member["title"] %>. <%= member["first_name"] %> <%= member["last_name"] %>
 </h1>
 
+	<img src="http://theunitedstates.io/images/congress/225x275/<%= member["bioguide_id"] %>.jpg">
+
 <h3>Political Info</h3>
 	
 <p>		
@@ -13,6 +15,21 @@
 	<b>Term Started</b>: <%= member["term_start"] %><br />
 	<b>Term Ends</b>: <%= member["term_end"] %><br />
 </p>
+
+	<h3>Political Summary</h3>
+	<p>
+		<% @open_secrets_sum.each do |oss| %>
+
+		<b>First Elected</b>: <%= oss[1]["first_elected"] %><br />
+		<b>Next Election</b>: <%= oss[1]["next_election"] %><br />
+		<b>Money Spent</b>: $<%= oss[1]["spent"] %><br />
+		<b>Cash on Hand</b>: $<%= oss[1]["cash_on_hand"] %><br />
+		<b>Debt</b>: $<%= oss[1]["debt"] %><br />
+		<b>Last Updated</b>: <%= oss[1]["last_updated"] %><br />
+		<a href="<%= oss[1]["source"] %>" target="_blank">More info</a><br />
+
+		<% end %>
+	</p>
 
 
 <h3>Contact Info</h3>
@@ -32,9 +49,46 @@
 	<a href="http://youtube.com/<%= member["youtube_id"] %>" target="_blank">YouTube</a><br />
 </p>
 
-<img src="http://theunitedstates.io/images/congress/225x275/<%= member["bioguide_id"] %>.jpg">
+
+ 
+<h3>2014 Political Contributions by Organization</h3>
+	<p>
+		<% @open_secrets_org.each do |oso| %>
+
+		<%= oso["org_name"] %> - $<%= oso["total"] %><br />
+
+		<% end %>
+	</p>
+
+
+<h3>Contributions by Industry</h3>
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Industry</th>
+	      <th>Individuals</th>
+	      <th>Super PACs</th>
+	      <th>Total</th>
+
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @open_secrets_ind.each do |osi| %>
+	      <tr>
+	        <td><%= osi["industry_name"] %></td>
+	        <td>$<%= osi["indivs"] %></td>
+	        <td>$<%= osi["pacs"] %></td>
+	        <td>$<%= osi["total"] %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
 
 <% end %>
+
+
 
 
 
