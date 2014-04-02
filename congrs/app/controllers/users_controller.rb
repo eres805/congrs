@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-before_action :authenticate
+before_action :authenticate, only: [:index, :show, :edit, :update, :destroy]
 
 	def index 
 		@users = User.all 
@@ -16,7 +16,7 @@ before_action :authenticate
 
 	def create
 		@user = User.create(user_params)
-		redirect_to(@user)
+		redirect_to root_path
 	end
 
 	def edit 

@@ -6,13 +6,15 @@
 
 	<img src="http://theunitedstates.io/images/congress/225x275/<%= member["bioguide_id"] %>.jpg">
 
+
+
 <h3>Political Info</h3>
 	
 <p>		
 	<b>Chamber</b>: <%= member["chamber"].capitalize %><br />
 	<b>Party</b>: <%= member["party"] %><br />
 	<b>State</b>: <%= member["state_name"] %><br />
-	<b>Term Started</b>: <%= member["term_start"] %><br />
+	<b>Term Started</b>: <%= member["term_start"].to_s %><br />
 	<b>Term Ends</b>: <%= member["term_end"] %><br />
 </p>
 
@@ -22,9 +24,9 @@
 
 		<b>First Elected</b>: <%= oss[1]["first_elected"] %><br />
 		<b>Next Election</b>: <%= oss[1]["next_election"] %><br />
-		<b>Money Spent</b>: $<%= oss[1]["spent"] %><br />
-		<b>Cash on Hand</b>: $<%= oss[1]["cash_on_hand"] %><br />
-		<b>Debt</b>: $<%= oss[1]["debt"] %><br />
+		<b>Money Spent</b>: <%= number_to_currency(oss[1]["spent"]) %><br />
+		<b>Cash on Hand</b>: <%= number_to_currency(oss[1]["cash_on_hand"]) %><br />
+		<b>Debt</b>: <%= number_to_currency(oss[1]["debt"]) %><br />
 		<b>Last Updated</b>: <%= oss[1]["last_updated"] %><br />
 		<a href="<%= oss[1]["source"] %>" target="_blank">More info</a><br />
 
@@ -51,11 +53,11 @@
 
 
  
-<h3>2014 Political Contributions by Organization</h3>
+<h3>Contributions by Organization (2009-2014)</h3>
 	<p>
 		<% @open_secrets_org.each do |oso| %>
 
-		<%= oso["org_name"] %> - $<%= oso["total"] %><br />
+		<%= oso["org_name"] %> - <%= number_to_currency(oso["total"]) %><br />
 
 		<% end %>
 	</p>
@@ -63,7 +65,7 @@
 
 <h3>Contributions by Industry</h3>
 
-	<table>
+	<table align="center">
 	  <thead>
 	    <tr>
 	      <th>Industry</th>
@@ -78,15 +80,18 @@
 	    <% @open_secrets_ind.each do |osi| %>
 	      <tr>
 	        <td><%= osi["industry_name"] %></td>
-	        <td>$<%= osi["indivs"] %></td>
-	        <td>$<%= osi["pacs"] %></td>
-	        <td>$<%= osi["total"] %></td>
+	        <td><%= number_to_currency(osi["indivs"]) %></td>
+	        <td><%= number_to_currency(osi["pacs"]) %></td>
+	        <td><%= number_to_currency(osi["total"]) %></td>
 	      </tr>
 	    <% end %>
 	  </tbody>
 	</table>
 
 <% end %>
+
+<br />
+<p><a href="http://www.opensecrets.org/" target="_blank"><img src="https://s3.amazonaws.com/uploads.hipchat.com/39979/685777/5lIOhqxODeqCZxu/opensecrets_databy200x72.gif"></a></p>
 
 
 

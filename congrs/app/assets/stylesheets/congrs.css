@@ -1,0 +1,36 @@
+body {
+	text-align: center
+
+}
+
+
+
+td
+{
+	padding:6px;
+	border:1px solid blue;
+}
+
+table 
+{
+	border:2px solid red;
+	text-align: center;
+	font-family: arial;
+}
+
+h1
+{
+	font-size: 40px;
+	font-family: arial;
+}
+
+h3
+{
+	font-size: 25px;
+	font-family: arial;
+}
+
+p
+{
+	font-family: arial;
+}

@@ -1,9 +1,6 @@
-class StatesController < ApplicationController
-
-before_action :authenticate
-
-def index
-@us_states = [
+class States
+	def self.get
+		return [
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],
       ['Arizona', 'AZ'],
@@ -57,16 +54,6 @@ def index
       ['Wisconsin', 'WI'],
       ['Wyoming', 'WY']
     ]
-end
-
-def show
-
-	search_params_state = params[:state]
-	results = HTTParty.get("https://congress.api.sunlightfoundation.com/legislators?per_page=all&state="+search_params_state+"&apikey=7ad1d136628443878ceb8655871a8799")
-      @results = results.to_hash["results"]
-      
-end
-
-
+	end
 
 end

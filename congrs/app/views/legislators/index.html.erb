@@ -1,0 +1,15 @@
+<h1>Find Legislators by Zip</h1>
+
+<form action="/states/show" method="get">
+
+<%= form_for (:zip) do |f| %>
+
+	<%= f.label(:zip) %>
+	<%= f.number_field(:zip) %>
+
+	<button>Submit</button>
+
+<% end %>
+
+</form>
+ 

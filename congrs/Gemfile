@@ -48,3 +48,8 @@ gem 'httparty'
 
 gem 'json'
 
+gem 'congress', '~> 0.2.2'
+
+gem 'rails_12factor', group: :production
+
+

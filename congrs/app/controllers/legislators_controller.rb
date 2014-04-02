@@ -24,8 +24,12 @@ def show
   		
   		@open_secrets_ind = open_secrets_ind.to_hash["response"]["industries"]["industry"]
 
-
   	end
+
+
+    def number_to_currency(number)
+    number_to_currency(number, :unit => "R$ ", :separator => ",", :delimiter => ".")
+    end
 
 
 end
