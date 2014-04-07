@@ -14,7 +14,6 @@ class CreateLegislators < ActiveRecord::Migration
     	t.string :facebook_id
     	t.string :twitter_id
     	t.string :youtube_id
-
     	t.string :bioguide_id
 
 
