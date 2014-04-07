@@ -2,7 +2,8 @@
 
 Welcome to CongrS.  Here you can find out more info about all members of the US Congress. 
 
-###Sign Up to gain full access
+###Features Coming Soon
+####Sign Up to gain full access
 
 To get the most out of CongrS, make sure you register!  Registration gives you access to the following features:
 
@@ -21,6 +22,8 @@ Eric R:
 
 
 ####Additional Links
+
+<http://shrouded-beach-3142.herokuapp.com/>
 
 <https://www.pivotaltracker.com/s/projects/1047060>
 
